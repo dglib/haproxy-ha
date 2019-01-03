@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+  web1:
+    image: nginx
+    container_name: web1
+    ports:
+      - "81:80"
+
+  web2:
+    image: nginx
+    container_name: web2
+    ports:
+      - "82:80"
+
+  lb1:
+    build: .
+    container_name: lb1
+    ports:
+      - "80"
+  
+  lb2:
+    build: .
+    container_name: lb2
+    ports:
+      - "80"
